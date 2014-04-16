@@ -1,0 +1,68 @@
+[defaults]
+log = -v
+
+[auth]
+bb.prefix = bitbucket.org
+bb.username = russelldarst
+bb.schemes = https
+
+dc.prefix   = *
+dc.username = russelldarst
+dc.password = iKxJX9YsMEwAtTKy
+dc.schemes  = http https
+ 
+[alias]
+pu = pull -u
+mylog = log -u russell.darst
+tags = tags --pager yes
+  
+[ui]
+username=Russell Darst <russell.darst@dcheetah.com>
+merge = vimdiff
+editor = ~/bin/vim
+   
+[extensions]
+eol =
+progress =
+color =
+pager=
+
+[color]
+custom.changeset = yellow
+custom.date = red
+custom.user = blue
+custom.url = blue
+
+[pager]
+pager = LESS='FSRX' less
+ignore = version, help, update, serve, record
+
+[merge-tools]
+vimdiff.executable = ~/bin/vim
+vimdiff.args = -d $base $local $output $other +close +close
+
+[patch]
+eol = cr
+     
+[progress]
+delay = 1.5
+refresh = 0.1
+assume-tty = True
+
+[diff]
+git= True
+
+[extensions]
+hgext.purge=
+      
+[hostfingerprints]
+autest.oneselectweb.com      = aa:c8:68:71:06:d6:48:cb:ec:85:7e:63:87:58:8f:4e:69:cf:7f:41
+auvirtual.autodesk.com       = 54:9f:23:91:25:90:2c:f5:56:3b:3b:15:5f:0c:a2:1e:66:71:71:36
+zorak.dcheetah.com           = a6:ae:0d:73:9d:53:8a:51:1a:3e:5f:d0:54:6e:5c:2d:1f:c4:e1:5f
+autest2.oneselectweb.com     = d2:43:27:ce:cb:bc:bf:3b:ea:16:4a:15:ea:7e:07:55:e7:04:d7:be
+arcstage.tcheetah.com        = 3b:41:d7:e6:3c:b0:85:b6:55:96:71:af:dd:8d:ec:86:ae:c4:f6:20
+bitbucket.org                = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+rad-arc-stage.tcheetah12.com = a4:cf:82:f4:d2:b7:15:d1:1b:26:d4:f1:e2:49:b4:51:88:d3:6f:a3 
+
+[web]
+cacerts =

@@ -1,0 +1,102 @@
+# vim: set nospell:
+
+# Do not display screen's copyright page
+startup_message off
+
+# Turn on the visual bell
+vbell on
+
+#Set the Scroll Back to 10000 lines.
+defscrollback 10000
+
+# Change the escape sequence to Ctrl t
+escape ^Tt
+
+autodetach on
+
+altscreen on # Not certain what this
+hardstatus alwayslastline
+# This is the original hardstatus line that I have modified and made my own.
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+hardstatus string '%{=wK}[ %{r}%H %{K}] %{K}[%{R}%-Lw%{r}(%{K}%n%{R}*%{K}%f%t%?(%u)%?%{r})%+Lw%=%{K}]%{K}[%{R}%C %a%{K}]'
+
+height -w
+
+# Set bind keys
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+bind 'K' kill
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+bind ' ' blanker
+
+# rxvt-unicode-256color
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+terminfo rxvt* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+term screen-256color
+defbce "on"
+
+#Force Screen to start in my home ($HOME) directory
+chdir
+
+#read and write screen clipboard to X clipboard. Requires xsel to be installed.
+bind > eval writebuf "exec sh -c 'xsel -bi </tmp/screen-exchange'"
+bind < eval "exec sh -c 'xsel -bo >/tmp/screen-exchange'" readbuf
+ 
+# OLD SCREEN RC SETTINGS
+#multiuser on
+#defscrollback 10000
+#hardstatus alwayslastline
+#hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %d/%m %C%a "
+
+#escape ^Tt
+#autodetach on
+#startup_message off
+#pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+#defhstatus "screen: ^En (^Et)"
+#altscreen on
+#shell -/bin/zsh
+#termcap xterm hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
+#terminfo xterm hs@:cs=\E[%i%p1%d;%p2%dr:im=\E[4h:ei=\E[4l
+#termcapinfo screen "hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007"
+#termcapinfo xterm Z0=\E[?3h:Z1=\E[?3l:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+#termcapinfo xterm* OL=10000
+#termcapinfo xterm 'VR=\E[?5h:VN=\E[?5l'
+#termcapinfo xterm 'k1=\E[11~:k2=\E[12~:k3=\E[13~:k4=\E[14~'
+#termcapinfo xterm 'kh=\EOH:kI=\E[2~:kD=\E[3~:kH=\EOF:kP=\E[5~:kN=\E[6~'
+#termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+#termcapinfo xterm 'vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l'
+#termcapinfo xterm 'XC=K%,%\E(B,[\304,\\\\\326,]\334,{\344,|\366,}\374,~\337'
+#termcapinfo xterm* be
+#termcapinfo linux C8
+#bind k
+#bind ^k
+#bind .
+#bind ^\
+#bind \\
+#bind ^h
+#bind h
+#bind 'K' kill
+#bind 'I' login on
+#bind 'O' login off
+#bind '}' history
+#bind ' ' blanker
+#height -w
+#deflogin on
+#obuflimit 1024
+#caption always string "%?%F%{= 0w}%:%{= w0}%?%2n %u%?%? [%h]%?  "
+#chdir
+#defmode 620
+#hardstatus off
+#
+#attrcolor b ".I"
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#defbce "on"
